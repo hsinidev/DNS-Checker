@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Tools: Minecraft Color Codes | doodax.com</title>
+    <meta name="description" content="Utilities for gamers, including a tool for Minecraft color and format codes to customize your chat and player appearance.">
+    <link rel="canonical" href="https://doodax.com/gaming-tools.html" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        @keyframes nebula-bg { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .cosmic-background { background: linear-gradient(135deg, #0f0a20, #00124c, #300c50, #4b0082, #0f0a20); background-size: 400% 400%; animation: nebula-bg 30s ease infinite; }
+        .text-gold { color: #FFD700; }
+        .tool-card { transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
+        .tool-card:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); }
+    </style>
+</head>
+<body class="cosmic-background text-gray-200 antialiased min-h-screen flex flex-col">
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">DNS Checker</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="index.html" class="text-gray-300 hover:text-gold">All Tools</a>
+                <a href="dns-tools.html" class="text-gray-300 hover:text-gold">DNS Tools</a>
+                <a href="ip-tools.html" class="text-gray-300 hover:text-gold">IP Tools</a>
+                <a href="dev-tools.html" class="text-gray-300 hover:text-gold">Dev Tools</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow container mx-auto p-6">
+        <div class="bg-gray-900/70 backdrop-blur-md rounded-lg shadow-2xl border border-gray-700 p-6 md:p-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Gaming Tools</h1>
+                <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">Playing Minecraft and want to redesign your chat commands or change the armor color your player uses? This tool provides a list of Minecraft color and format codes.</p>
+            </div>
+            
+            <div class="max-w-xs mx-auto">
+                <a href="gaming-tools.html" class="tool-card block p-4 bg-gray-800/50 rounded-lg border border-gray-700 shadow-lg hover:border-gold"><h3 class="tool-title text-md font-semibold text-gray-100">Minecraft Color Codes</h3><p class="tool-description text-sm text-gray-400">Minecraft Format & Color Codes</p></a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900/80 mt-12 border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8 text-center text-sm text-gray-400">
+             <p class="font-semibold text-gold">
+                Powered by <a href="https://github.com/hsinidev" target="_blank" rel="noopener noreferrer" class="hover:underline">HSINI MOHAMED</a>
+            </p>
+             <p class="mt-2">Copyright © 2023. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

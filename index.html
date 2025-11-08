@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Online Tools by DNS Checker | doodax.com</title>
+    <meta name="description" content="Access a comprehensive suite of free online tools for DNS, IP, Development, Security, and Productivity, all in one place. Your complete toolbox for network, development, and security tasks.">
+    <link rel="canonical" href="https://doodax.com/" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        @keyframes nebula-bg {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .cosmic-background {
+            background: linear-gradient(135deg, #0f0a20, #00124c, #300c50, #4b0082, #0f0a20);
+            background-size: 400% 400%;
+            animation: nebula-bg 30s ease infinite;
+        }
+        .text-gold { color: #FFD700; }
+        .tool-card { transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
+        .tool-card:hover { transform: translateY(-6px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); }
+        dialog::backdrop { background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(4px); }
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in 0.5s ease-out forwards;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0"
+  }
+}
+</script>
+</head>
+<body class="cosmic-background text-gray-200 antialiased min-h-screen flex flex-col">
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">DNS Checker</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="index.html" class="font-semibold text-gold">All Tools</a>
+                <a href="dns-tools.html" class="text-gray-300 hover:text-gold">DNS Tools</a>
+                <a href="ip-tools.html" class="text-gray-300 hover:text-gold">IP Tools</a>
+                <a href="dev-tools.html" class="text-gray-300 hover:text-gold">Dev Tools</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow container mx-auto p-6">
+        <!-- Domain IP Lookup Tool -->
+        <div class="bg-gray-900/70 backdrop-blur-md rounded-lg shadow-2xl border border-gray-700 p-6 md:p-8 mb-12">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-white">Domain IP Lookup</h2>
+                <p class="mt-3 text-gray-400 max-w-2xl mx-auto">Enter a domain name to find its corresponding IP address instantly.</p>
+            </div>
+            <div class="mt-8 max-w-xl mx-auto flex flex-col sm:flex-row gap-3">
+                <label for="domainInput" class="sr-only">Domain Name</label>
+                <input type="text" id="domainInput" placeholder="e.g., google.com" class="flex-grow w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-gold text-white shadow-sm">
+                <button id="lookupBtn" class="bg-gold text-gray-900 font-bold px-6 py-3 rounded-md hover:bg-yellow-400 transition-colors flex items-center justify-center shadow-md w-full sm:w-auto">
+                    <span id="btnText">Lookup IP</span>
+                    <svg id="btnSpinner" class="animate-spin h-5 w-5 text-gray-900 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="results" class="mt-6 text-center text-lg min-h-[56px] flex items-center justify-center"></div>
+        </div>
+
+        <!-- All Online Tools Section -->
+        <div class="bg-gray-900/70 backdrop-blur-md rounded-lg shadow-2xl border border-gray-700 p-6 md:p-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">All Online Tools</h1>
+                <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Your complete toolbox for network, development, and security tasks. Fast, free, and easy to use.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                 <a href="dns-tools.html" class="tool-card block p-6 bg-gray-800/50 rounded-lg border border-gray-700 shadow-lg hover:border-gold">
+                    <h3 class="tool-title text-xl font-semibold text-white">DNS Tools</h3>
+                    <p class="tool-description text-sm text-gray-400 mt-2">Lookup and validate SPF, MX, A, CNAME, and other core DNS records.</p>
+                </a>
+                 <a href="ip-tools.html" class="tool-card block p-6 bg-gray-800/50 rounded-lg border border-gray-700 shadow-lg hover:border-gold">
+                    <h3 class="tool-title text-xl font-semibold text-white">IP Tools</h3>
+                    <p class="tool-description text-sm text-gray-400 mt-2">Find your IP, IP location, WHOIS, blacklist check, and IP format conversion.</p>
+                </a>
+                <a href="dev-tools.html" class="tool-card block p-6 bg-gray-800/50 rounded-lg border border-gray-700 shadow-lg hover:border-gold">
+                    <h3 class="tool-title text-xl font-semibold text-white">Developer Tools</h3>
+                    <p class="tool-description text-sm text-gray-400 mt-2">Check HTTP headers, generate MD5/Base64, URL rewrite, and more.</p>
+                </a>
+                <a href="designer-tools.html" class="tool-card block p-6 bg-gray-800/50 rounded-lg border border-gray-700 shadow-lg hover:border-gold">
+                    <h3 class="tool-title text-xl font-semibold text-white">Designer Tools</h3>
+                    <p class="tool-description text-sm text-gray-400 mt-2">Convert colors between RGB, HEX, CMYK, HSV, and Pantone systems.</p>
+                </a>
+                <a href="webmasters-tools.html" class="tool-card block p-6 bg-gray-800/50 rounded-lg border border-gray-700 shadow-lg hover:border-gold">
+                    <h3 class="tool-title text-xl font-semibold text-white">Webmasters Tools</h3>
+                    <p class="tool-description text-sm text-gray-400 mt-2">Website link analyzer, Google SERP simulator, and Robots.txt generator.</p>
+                </a>
+                <a href="network-tools.html" class="tool-card block p-6 bg-gray-800/50 rounded-lg border border-gray-700 shadow-lg hover:border-gold">
+                    <h3 class="tool-title text-xl font-semibold text-white">Network Tools</h3>
+                    <p class="tool-description text-sm text-gray-400 mt-2">Port checker, MAC address lookup, and ASN WHOIS information.</p>
+                </a>
+                <a href="cyber-security-tools.html" class="tool-card block p-6 bg-gray-800/50 rounded-lg border border-gray-700 shadow-lg hover:border-gold">
+                    <h3 class="tool-title text-xl font-semibold text-white">Cyber Security Tools</h3>
+                    <p class="tool-description text-sm text-gray-400 mt-2">SSL checker, password encryption, and password strength evaluation.</p>
+                </a>
+                <a href="productivity-tools.html" class="tool-card block p-6 bg-gray-800/50 rounded-lg border border-gray-700 shadow-lg hover:border-gold">
+                    <h3 class="tool-title text-xl font-semibold text-white">Productivity Tools</h3>
+                    <p class="tool-description text-sm text-gray-400 mt-2">QR Code generator, Lorem Ipsum, Time Card calculator, and text utilities.</p>
+                </a>
+                <a href="gaming-tools.html" class="tool-card block p-6 bg-gray-800/50 rounded-lg border border-gray-700 shadow-lg hover:border-gold">
+                    <h3 class="tool-title text-xl font-semibold text-white">Gaming Tools</h3>
+                    <p class="tool-description text-sm text-gray-400 mt-2">Tools and utilities for specific games like Minecraft Color Codes.</p>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900/80 mt-12 border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8 text-center text-sm text-gray-400">
+             <p class="font-semibold text-gold">
+                Powered by <a href="https://github.com/hsinidev" target="_blank" rel="noopener noreferrer" class="hover:underline">HSINI MOHAMED</a>
+            </p>
+             <p class="mt-2">Copyright © 2023. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
